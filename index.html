@@ -730,168 +730,110 @@ text-align: center;
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>4x4 图标排布</title>
+<title>自定义图片布局</title>
 <style>
-  /* 让整个页面保持原有布局 */
-  body {
-    margin: 0;
-    padding: 20px; /* 假设你的导航在顶部，保持空间 */
-    font-family: Arial, sans-serif;
-  }
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background:#f0f0f0;
+}
 
-  /* 主要容器，用于居中图标区域 */
-  .icon-container {
-    display: flex;
-    justify-content: center; /* 水平居中 */
-    align-items: center;     /* 垂直居中 */
-    min-height: 60vh;        /* 垂直居中区域高度，可以调整 */
-  }
+/* 容器居中 */
+.change {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 30px;
+}
 
-  /* 图标网格布局，响应式 */
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    max-width: 600px; /* 限制最大宽度，确保适应手机 */
-    width: 90%;
-  }
+/* 图片列表样式，用flex布局代替float，更现代 */
+.change ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* 横向平均分配 */
+  padding: 0;
+  margin: 0;
+  list-style: none; /* 去掉默认点 */
+  width: 100%;
+}
 
-  /* 单个元素样式 */
-  .item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    text-decoration: none;
-    color: black;
-  }
+/* 每个列表项样式 */
+.change ul li {
+  width: 22%;
+  margin-bottom: 10px;
+  text-align: center;
+  /* float: left; 不用float了，用flex代替 */
+}
 
-  /* 图标样式，保持正方形 */
-  .icon {
-    width: 100%;
-    aspect-ratio: 1 / 1; /* 现代浏览器支持，确保正方形 */
-    background-color: #ccc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5em;
-    border: 1px solid #999;
-    box-sizing: border-box;
-  }
+/* 图片样式 */
+.change ul li img {
+  margin: 0 auto;
+  padding: 4px;
+  width: 85px;
+  height: 85px;
+  border-radius: 85px; /* 圆形 */
+  display: block;
+  object-fit: cover; /* 确保图片比例不变形 */
+  transition: transform 0.3s ease-in-out;
+}
 
-  /* 文字标签样式 */
-  .label {
-    margin-top: 8px;
-  }
+/* 悬停放大效果 */
+.change ul a:hover img {
+  transform: scale(1.1);
+}
+
+/* 链接样式 */
+.change ul a {
+  color: #3c9387;
+  font-size: 14px;
+  display: block;
+  text-decoration: none;
+  margin-top: 5px;
+  white-space: nowrap;
+}
+
+/* 悬停文字颜色变化 */
+.change ul a:hover {
+  color: #36F;
+}
 </style>
 </head>
 <body>
 
-<!-- 如果你的导航在页面顶部，就在这里保持你的导航HTML -->
-
-<!-- 自定义居中图标区域 -->
-<div class="icon-container">
-  <a class="item" href="https://example.com/link1" target="_blank">
-  <div class="icon">
-    <img src="https://huohua.plxao.com/mtad/v4/150.gif" alt="动图" />
-  </div>亚洲无码</div>
-</a>
-    <a class="item" href="https://example.com/link1" target="_blank">
-  <div class="icon">
-    <img src="https://img.alicdn.com/imgextra/i3/3382900570/O1CN01CmdZrx1G56p8f4xBE_!!3382900570.gif" alt="动图" />
-  </div>
-  <div class="label">澳门新威尼斯</div>
-</a>
-    <a class="item" href="https://example.com/link1" target="_blank">
-  <div class="icon">
-    <img src="https://oss.suning.com/mbap/mbapbk/4e7ccd895d4b3d7603d1cb7cf8ea6eab.gif" alt="动图" />
-  </div>
-  <div class="label">官网PG</div>
-</a>
-   <a class="item" href="https://example.com/link1" target="_blank">
-  <div class="icon">
-    <img src="https://img2.zjqjs.com/c439bb8452cca997dc36febf968fc9a9.gif" alt="动图" />
-  </div>
-  <div class="label">PG国际</div>
-</a>
-   <a class="item" href="https://example.com/link1" target="_blank">
-  <div class="icon">
-    <img src="https://yttuw.yingtaotuwen.com/yt/yan/200-200.gif" alt="动图" />
-  </div>
-  <div class="label">隔壁艹我</div>
-</a>
-   <a class="item" href="https://example.com/link1" target="_blank">
-  <div class="icon">
-    <img src="https://img.cospu2066.top/imi150x150.gif" alt="动图" />
-  </div>
-  <div class="label">i米体育</div>
-</a>
-    <a class="item" href="https://example.com/link1" target="_blank">
-  <div class="icon">
-    <img src="https://yuhuo888.asdf010.com/worldyh/y100.gif" alt="动图" />
-  </div>
-  <div class="label">射你一身</div>
-</a>
-    <a class="item" href="https://example.com/link1" target="_blank">
-  <div class="icon">
-    <img src="https://example.com/path/to/your-animation.gif" alt="动图" />
-  </div>
-  <div class="label">图标一</div>
-</a>
-    <a class="item" href="https://example.com/link1" target="_blank">
-  <div class="icon">
-    <img src="https://feifei.tumwf.com/xpj3/200x200.gif" alt="动图" />
-  </div>
-  <div class="label">新葡京娱乐</div>
-</a>
-    <a class="item" href="https://example.com/link1" target="_blank">
-  <div class="icon">
-    <img src="https://img.cospu2011.top/1.gif" alt="动图" />
-  </div>
-  <div class="label">开元棋牌</div>
-</a>
-    <a class="item" href="https://example.com/link1" target="_blank">
-  <div class="icon">
-    <img src="https://dd-static.jd.com/ddimg/jfs/t1/300908/31/1813/66520/004ef201F6362ce49/f346c2dc526b74cf.gif" alt="动图" />
-  </div>
-  <div class="label">澳门威尼斯</div>
-</a>
-    <a class="item" href="https://example.com/link1" target="_blank">
-  <div class="icon">
-    <img src="https://collision3550.top/b7307118fb42b64017dea3e5f313a9c8.gif" alt="动图" />
-  </div>
-  <div class="label">PG娱乐</div>
-</a>
-    <a class="item" href="https://example.com/link1" target="_blank">
-  <div class="icon">
-    <img src="https://u1-204.ecukwai.com/bs2/upload-qualification-center/dXBsb2FkLXF1YWxpZmljYXRpb24tY2VudGVyOlRIRU1TX0lURU1fUVVBTElGSUNBVElPTl9VUExPQUQ6MjI5MTIxNTA2MDpNRVJDSEFOVDpbQkA4MDVlZDVkOjg1OTcyOTg5NjQwNjA%3D.jpg" alt="动图" />
-  </div>
-  <div class="label">艹艹妹妹</div>
-</a>
-    <a class="item" href="https://example.com/link1" target="_blank">
-  <div class="icon">
-    <img src="https://raw.githubusercontent.com/xingxing890/ai/refs/heads/main/ai/images/757.avif" alt="动图" />
-  </div>
-  <div class="label">新葡京</div>
-</a>
-   <a class="item" href="https://example.com/link1" target="_blank">
-  <div class="icon">
-    <img src="https://imagses.com/i/2025/05/09/163411.gif" alt="动图" />
-  </div>
-  <div class="label">免费看片</div>
-</a>
-    <a class="item" href="https://example.com/link1" target="_blank">
-  <div class="icon">
-    <img src="https://i.meee.com.tw/joGDLZd.gif" alt="动图" />
-  </div>
-  <div class="label">漫画天堂</div>
-</a>
-  </div>
+<div class="change">
+    <ul>
+      <!-- 示例图片项目，替换为你的图片和链接 -->
+      <li>
+        <a href="https://example.com/link1" target="_blank">
+          <img src="https://via.placeholder.com/85" alt="图标1" />
+        </a>
+        <a href="https://example.com/link1" target="_blank">图标一</a>
+      </li>
+      <li>
+        <a href="https://example.com/link2" target="_blank">
+          <img src="https://via.placeholder.com/85" alt="图标2" />
+        </a>
+        <a href="https://example.com/link2" target="_blank">图标二</a>
+      </li>
+      <li>
+        <a href="https://example.com/link3" target="_blank">
+          <img src="https://via.placeholder.com/85" alt="图标3" />
+        </a>
+        <a href="https://example.com/link3" target="_blank">图标三</a>
+      </li>
+      <li>
+        <a href="https://example.com/link4" target="_blank">
+          <img src="https://via.placeholder.com/85" alt="图标4" />
+        </a>
+        <a href="https://example.com/link4" target="_blank">图标四</a>
+      </li>
+      <!-- 可以继续添加其他项目 -->
+    </ul>
 </div>
 
 </body>
 </html>
-
 
 
 
