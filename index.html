@@ -651,24 +651,25 @@ text-align: center;
      
 
 
+
+<head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>4x4 图标排列自适应</title>
 <style>
   body {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    justify-content: center; /* 水平居中 */
+    align-items: center;     /* 垂直居中 */
+    height: 100vh;           /* 视口高度，确保居中 */
     margin: 0;
-    background: #f0f0f0;
+    background-color: #f0f0f0;
   }
   .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    width: 90%; /* 让整个网格占屏幕宽度的90% */
-    max-width: 800px; /* 最大宽度，防止过宽 */
+    width: 90%;
+    max-width: 800px;
   }
   .item {
     display: flex;
@@ -678,26 +679,21 @@ text-align: center;
     color: black;
   }
   .icon {
-    width: 100%; /* 自适应宽度 */
-    padding-top: 100%; /* 让宽度等于高度，形成正方形 */
-    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* 保持正方形，现代浏览器支持此属性 */
     background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
     border: 1px solid #999;
     box-sizing: border-box;
-  }
-  .icon > span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.5em;
   }
   .label {
     margin-top: 8px;
     font-size: 14px;
     text-align: center;
   }
-  /* 保持图标为正方形 */
 </style>
 </head>
 <body>
@@ -768,7 +764,7 @@ text-align: center;
     <div class="label">图标十六</div>
   </a>
 </div>
-
+</body>
 
            	<a class="button is-black has-text-weight-bold" href="https://true5cd6b2.naihendacdso.buzz/?utm_source=linzho.vwolfsexse.buzz" target="_blank"  onclick="_paq.push(['trackEvent', '分类', '❈最新❈', 'https://醐不xb.beso3rrib.buzz/b/ser.html']);gtag('event', '分类', {'event_category': '点击', 'event_label': '❈最新❈','value': 500});">❈最新❈</a>
      
