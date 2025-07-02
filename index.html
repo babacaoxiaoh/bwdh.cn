@@ -730,7 +730,7 @@ text-align: center;
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>自定义图片布局</title>
+<title>两行四列图标布局</title>
 <style>
 body {
   margin: 0;
@@ -744,37 +744,37 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 12px 30px;
 }
 
-/* 图片列表样式，用flex布局代替float，更现代 */
+/* 使用Flex布局制作两行四列的排布，保证每一列宽度一致 */
 .change ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around; /* 横向平均分配 */
+  justify-content: space-between; /* 横向平均分配空隙 */
   padding: 0;
   margin: 0;
-  list-style: none; /* 去掉默认点 */
-  width: 100%;
+  list-style: none; /* 无点点 */
+  width: 100%; /* 铺满父容器宽度 */
+  max-width: 600px; /* 最大宽度，适应手机宽度 */
 }
 
-/* 每个列表项样式 */
+/* 每个项目宽度设置成 23%，留有空间 */
 .change ul li {
-  width: 22%;
-  margin-bottom: 10px;
+  width: 23%;
+  margin-bottom: 15px; /* 下方留间隙 */
+  box-sizing: border-box; /* 包含padding */
   text-align: center;
-  /* float: left; 不用float了，用flex代替 */
 }
 
-/* 图片样式 */
+/* 图片样式，圆形且不变形 */
 .change ul li img {
   margin: 0 auto;
   padding: 4px;
   width: 85px;
   height: 85px;
-  border-radius: 85px; /* 圆形 */
+  border-radius: 85px;
   display: block;
-  object-fit: cover; /* 确保图片比例不变形 */
+  object-fit: cover; /* 保持比例，不变形 */
   transition: transform 0.3s ease-in-out;
 }
 
@@ -783,63 +783,82 @@ body {
   transform: scale(1.1);
 }
 
-/* 链接样式 */
+/* 文字标签样式，预留空间 */
 .change ul a {
-  color: #3c9387;
-  font-size: 14px;
+  margin-top: 8px;
   display: block;
+  font-size: 14px;
+  color: #3c9387;
   text-decoration: none;
-  margin-top: 5px;
-  white-space: nowrap;
+  white-space: nowrap; /* 防止文字换行 */
 }
 
-/* 悬停文字颜色变化 */
+/* 悬停颜色变化 */
 .change ul a:hover {
   color: #36F;
 }
+
 </style>
 </head>
 <body>
 
 <div class="change">
     <ul>
-      <!-- 示例图片项目，替换为你的图片和链接 -->
+      <!-- 这里添加两个新项，保持两行四列布局 -->
+      <li>
+        <a href="https://gfhsd1785.f8bzdqoxjc.com:51223/4328.html" target="_blank">
+          <img src="https://pttptt.cc/images/friend/0/741.avif" alt="永利娱乐" />
+        </a>
+        <a href="https://gfhsd1785.f8bzdqoxjc.com:51223/4328.html" target="_blank">永利娱乐</a>
+      </li>
+      <li>
+        <a href="https://r3dtmw6o.wcn52.com/?ttok=c6Bm" target="_blank">
+          <img src="https://pttptt.cc/images/friend/0/708.avif" alt="免费福利" />
+        </a>
+        <a href="https://r3dtmw6o.wcn52.com/?ttok=c6Bm" target="_blank">免费福利</a>
+      </li>
+      <li>
+        <a href="https://ss86-14.xyz/?channel=qun6" target="_blank">
+          <img src="https://pttptt.cc/images/friend/0/728.avif" alt="高清色片" />
+        </a>
+        <a href="https://ss86-14.xyz/?channel=qun6" target="_blank">高清色片</a>
+      </li>
+      <li>
+        <a href="https://ok.408185.cc:4040/88.html?shareName=408185.cc" target="_blank">
+          <img src="https://pttptt.cc/images/friend/0/737.avif" alt="开元棋牌" />
+        </a>
+        <a href="https://ok.408185.cc:4040/88.html?shareName=408185.cc" target="_blank">开元棋牌</a>
+      </li>
+      <!-- 新增四个项目，确保两排两列 */
       <li>
         <a href="https://www.ttyyuhfrjursbrtweg101.cc" target="_blank">
-          <img src="https://img2.zjqjs.com/c439bb8452cca997dc36febf968fc9a9.gif" alt="图标1" />
+          <img src="https://img2.zjqjs.com/c439bb8452cca997dc36febf968fc9a9.gif" alt="PG国际" />
         </a>
         <a href="https://www.ttyyuhfrjursbrtweg101.cc" target="_blank">PG国际</a>
       </li>
       <li>
-        <a href="https://museum-929-vnsr-0th5mwk.japaneast.cloudapp.azure.com:929/?cid=339454&type=4&currency=CNY&id=540133574" target="_blank">
-          <img src="https://imagses.com/i/2025/05/09/163411.gif" alt="图标2" />
+        <a href="https://museum-929-vnsr-0th5mwk.japaneast.cloudapp.azure.com:929/?cid=339454&type=4&currency=CNY&id=540133574" target=" target="_blank">
+          <img src="https://imagses.com/i/2025/05/09/163411.gif" alt="免费看片" />
         </a>
         <a href="https://museum-929-vnsr-0th5mwk.japaneast.cloudapp.azure.com:929/?cid=339454&type=4&currency=CNY&id=540133574" target="_blank">免费看片</a>
       </li>
       <li>
         <a href="https://zcp97jk.9909008.com/?&coverStatus=1&shareSource=0" target="_blank">
-          <img src="https://collision3550.top/b7307118fb42b64017dea3e5f313a9c8.gif" alt="图标3" />
+          <img src="https://collision3550.top/b7307118fb42b64017dea3e5f313a9c8.gif" alt="PG娱乐城" />
         </a>
-        <a href="https://zcp97jk.9909008.com/?&coverStatus=1&shareSource=0" target="_blank">PG娱乐城</a>
+        <a href="https://zcp97jk.9909008.com/?&coverStatus=1&shareSource=0"_blank">PG娱乐城</a>
       </li>
       <li>
-        <a href="http://tzkaiywqpgrtg-blmnj-1840332219.ap-northeast-1.elb.amazonaws.com/?shareName=562x113" target="_blank">
-          <img src="https://img.cospu2011.top/1.gif" alt="图标4" />
-        </a>
-        <a href="https://157.254.212.175:7595/helloWord/?cid=310986"_blank">&#24320;&#20803;&#26827;&#29260;</a>
-      </li>
-         <a href="https://157.254.212.175:7595/helloWord/?cid=310986" target="_blank">
-          <img src="https://feifei.tumwf.com/xpj3/200x200.gif" alt="图标4" />
+        <a href="http://tzkaiywqpgrtg-blmnj-1840332219.ap-northeast-1.elb.amazonaws.com/?shareName=562x113"_blank">
+          <img src="https://feifei.tumwf.com/xpj3/200x200.gif" alt="新葡京" />
         </a>
         <a href="http://tzkaiywqpgrtg-blmnj-1840332219.ap-northeast-1.elb.amazonaws.com/?shareName=562x113"_blank">新葡京</a>
       </li>
-	    <!-- 可以继续添加其他项目 -->
     </ul>
 </div>
 
 </body>
 </html>
-
 
 
 
