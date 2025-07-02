@@ -730,7 +730,7 @@ text-align: center;
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>两行四列图标布局</title>
+<title>两行四列图片布局</title>
 <style>
 body {
   margin: 0;
@@ -739,73 +739,61 @@ body {
   background:#f0f0f0;
 }
 
-/* 容器居中 */
+/* 容器设置为flex布局，允许换行 */
 .change {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* 使用Flex布局制作两行四列的排布，保证每一列宽度一致 */
-.change ul {
-  display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* 横向平均分配空隙 */
-  padding: 0;
-  margin: 0;
-  list-style: none; /* 无点点 */
-  width: 100%; /* 铺满父容器宽度 */
-  max-width: 600px; /* 最大宽度，适应手机宽度 */
+  justify-content: space-around; /* 每行平均分配空间 */
+  max-width: 600px; /* 限制最大宽度，避免过宽 */
+  margin: 0 auto;     /* 居中 */
 }
 
-/* 每个项目宽度设置成 23%，留有空间 */
-.change ul li {
-  width: 23%;
-  margin-bottom: 15px; /* 下方留间隙 */
-  box-sizing: border-box; /* 包含padding */
+/* 每个li宽度为25%，保证4列 */
+.change > a-item {
+  width: 22%; /* 留出空间避免挤在一起 */
+  margin-bottom: 20px;
   text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
 }
 
-/* 图片样式，圆形且不变形 */
-.change ul li img {
-  margin: 0 auto;
-  padding: 4px;
+/* 图片样式 */
+.change img {
   width: 85px;
   height: 85px;
   border-radius: 85px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
   display: block;
-  object-fit: cover; /* 保持比例，不变形 */
-  transition: transform 0.3s ease-in-out;
+  margin: 0 auto;
 }
 
-/* 悬停放大效果 */
-.change ul a:hover img {
+/* 悬停放大 */
+.change a:hover img {
   transform: scale(1.1);
 }
 
-/* 文字标签样式，预留空间 */
-.change ul a {
-  margin-top: 8px;
+/* 标题文字样式 */
+.change a {
   display: block;
+  margin-top: 8px;
   font-size: 14px;
   color: #3c9387;
   text-decoration: none;
-  white-space: nowrap; /* 防止文字换行 */
+  white-space: nowrap; /* 避免换行 */
 }
 
-/* 悬停颜色变化 */
-.change ul a:hover {
+/* 悬停文字颜色变化 */
+.change a:hover {
   color: #36F;
 }
-
 </style>
 </head>
 <body>
 
 <div class="change">
-    <ul>
-      <!-- 这里添加两个新项，保持两行四列布局 -->
-      <li>
+  <!-- 使用a标签包裹图片和文字 -->
         <a href="https://gfhsd1785.f8bzdqoxjc.com:51223/4328.html" target="_blank">
           <img src="https://pttptt.cc/images/friend/0/741.avif" alt="永利娱乐" />
         </a>
