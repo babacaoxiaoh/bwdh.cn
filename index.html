@@ -735,34 +735,32 @@ text-align: center;
 body {
   margin: 0;
   padding: 20px;
+  background-color: #f0f0f0;
   font-family: Arial, sans-serif;
-  background:#f0f0f0;
 }
 
-/* 容器设置为flex布局，允许换行 */
-.change {
+/* 容器设置为flex布局，支持换行 */
+.container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around; /* 每行平均分配空间 */
-  max-width: 600px; /* 限制最大宽度，避免过宽 */
-  margin: 0 auto;     /* 居中 */
+  justify-content: space-between; /* 每行项目平均分配空间 */
+  max-width: 840px; /* 根据图片和间距设置宽度，确保两行四列 */
+  margin: 0 auto; /* 居中 */
 }
 
-/* 每个li宽度为25%，保证4列 */
-.change > a-item {
-  width: 22%; /* 留出空间避免挤在一起 */
+/* 每个项目宽度占26%，留出间距 */
+.item {
+  width: 24%;
   margin-bottom: 20px;
   text-align: center;
-  display: inline-block;
-  vertical-align: top;
   box-sizing: border-box;
 }
 
 /* 图片样式 */
-.change img {
+.item img {
   width: 85px;
   height: 85px;
-  border-radius: 85px;
+  border-radius: 50%;
   object-fit: cover;
   transition: transform 0.3s ease;
   display: block;
@@ -770,78 +768,72 @@ body {
 }
 
 /* 悬停放大 */
-.change a:hover img {
+.item a:hover img {
   transform: scale(1.1);
 }
 
-/* 标题文字样式 */
-.change a {
+/* 文字标签样式 */
+.item span {
   display: block;
   margin-top: 8px;
   font-size: 14px;
   color: #3c9387;
-  text-decoration: none;
-  white-space: nowrap; /* 避免换行 */
-}
-
-/* 悬停文字颜色变化 */
-.change a:hover {
-  color: #36F;
+  white-space: nowrap; /* 防止文字换行 */
 }
 </style>
 </head>
 <body>
 
-<div class="change">
-  <!-- 使用a标签包裹图片和文字 -->
-        <a href="https://gfhsd1785.f8bzdqoxjc.com:51223/4328.html" target="_blank">
+<div class="container">
+  <!-- 第一排 -->
+  <div class="item">
+    <a href="http://tzkaiywqpgrtg-blmnj-1840332219.ap-northeast-1.elb.amazonaws.com/?shareName=562x113"_blank">
+          <img src="https://feifei.tumwf.com/xpj3/200x200.gif" alt="新葡京" />
+    </a>
+    <span>新葡京</span>
+  </div>
+  <div class="item">
+    <a href="https://zcp97jk.9909008.com/?&coverStatus=1&shareSource=0" target="_blank">
+          <img src="https://collision3550.top/b7307118fb42b64017dea3e5f313a9c8.gif" alt="PG娱乐城" />
+    </a>
+    <span>PG娱乐城</span>
+  </div>
+  <div class="item">
+    <a href="https://museum-929-vnsr-0th5mwk.japaneast.cloudapp.azure.com:929/?cid=339454&type=4&currency=CNY&id=540133574" target=" target="_blank">
+          <img src="https://imagses.com/i/2025/05/09/163411.gif" alt="免费看片" />
+    </a>
+    <span>免费看片</span>
+  </div>
+  <div class="item">
+     <a href="https://www.ttyyuhfrjursbrtweg101.cc" target="_blank">
+          <img src="https://img2.zjqjs.com/c439bb8452cca997dc36febf968fc9a9.gif" alt="PG国际" />
+    </a>
+    <span>PG国际</span>
+  </div>
+  <!-- 第二排 -->
+  <div class="item">
+      <a href="https://ok.408185.cc:4040/88.html?shareName=408185.cc" target="_blank">
+          <img src="https://pttptt.cc/images/friend/0/737.avif" alt="开元棋牌" />
+    </a>
+    <span>开元棋牌</span>
+  </div>
+  <div class="item">
+     <a href="https://ss86-14.xyz/?channel=qun6" target="_blank">
+          <img src="https://pttptt.cc/images/friend/0/728.avif" alt="高清色片" />
+    <span>高清色片</span>
+  </div>
+  <div class="item">
+    <a href="https://r3dtmw6o.wcn52.com/?ttok=c6Bm" target="_blank">
+          <img src="https://pttptt.cc/images/friend/0/708.avif" alt="免费福利" />
+    </a>
+    <span>免费福利</span>
+  </div>
+  <div class="item">
+    <a href="https://gfhsd1785.f8bzdqoxjc.com:51223/4328.html" target="_blank">
           <img src="https://pttptt.cc/images/friend/0/741.avif" alt="永利娱乐" />
         </a>
-        <a href="https://gfhsd1785.f8bzdqoxjc.com:51223/4328.html" target="_blank">永利娱乐</a>
-      </li>
-      <li>
-        <a href="https://r3dtmw6o.wcn52.com/?ttok=c6Bm" target="_blank">
-          <img src="https://pttptt.cc/images/friend/0/708.avif" alt="免费福利" />
-        </a>
-        <a href="https://r3dtmw6o.wcn52.com/?ttok=c6Bm" target="_blank">免费福利</a>
-      </li>
-      <li>
-        <a href="https://ss86-14.xyz/?channel=qun6" target="_blank">
-          <img src="https://pttptt.cc/images/friend/0/728.avif" alt="高清色片" />
-        </a>
-        <a href="https://ss86-14.xyz/?channel=qun6" target="_blank">高清色片</a>
-      </li>
-      <li>
-        <a href="https://ok.408185.cc:4040/88.html?shareName=408185.cc" target="_blank">
-          <img src="https://pttptt.cc/images/friend/0/737.avif" alt="开元棋牌" />
-        </a>
-        <a href="https://ok.408185.cc:4040/88.html?shareName=408185.cc" target="_blank">开元棋牌</a>
-      </li>
-      <!-- 新增四个项目，确保两排两列 */
-      <li>
-        <a href="https://www.ttyyuhfrjursbrtweg101.cc" target="_blank">
-          <img src="https://img2.zjqjs.com/c439bb8452cca997dc36febf968fc9a9.gif" alt="PG国际" />
-        </a>
-        <a href="https://www.ttyyuhfrjursbrtweg101.cc" target="_blank">PG国际</a>
-      </li>
-      <li>
-        <a href="https://museum-929-vnsr-0th5mwk.japaneast.cloudapp.azure.com:929/?cid=339454&type=4&currency=CNY&id=540133574" target=" target="_blank">
-          <img src="https://imagses.com/i/2025/05/09/163411.gif" alt="免费看片" />
-        </a>
-        <a href="https://museum-929-vnsr-0th5mwk.japaneast.cloudapp.azure.com:929/?cid=339454&type=4&currency=CNY&id=540133574" target="_blank">免费看片</a>
-      </li>
-      <li>
-        <a href="https://zcp97jk.9909008.com/?&coverStatus=1&shareSource=0" target="_blank">
-          <img src="https://collision3550.top/b7307118fb42b64017dea3e5f313a9c8.gif" alt="PG娱乐城" />
-        </a>
-        <a href="https://zcp97jk.9909008.com/?&coverStatus=1&shareSource=0"_blank">PG娱乐城</a>
-      </li>
-      <li>
-        <a href="http://tzkaiywqpgrtg-blmnj-1840332219.ap-northeast-1.elb.amazonaws.com/?shareName=562x113"_blank">
-          <img src="https://feifei.tumwf.com/xpj3/200x200.gif" alt="新葡京" />
-        </a>
-        <a href="http://tzkaiywqpgrtg-blmnj-1840332219.ap-northeast-1.elb.amazonaws.com/?shareName=562x113"_blank">新葡京</a>
-
+	   <span>永利娱乐</span>
+  </div>
 </div>
 
 </body>
