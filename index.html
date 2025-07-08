@@ -5,147 +5,123 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>下载站示例</title>
 <style>
-  body {
-    margin: 0;
-    background-color: yellow;
-    font-family: Arial, sans-serif;
-    text-align: center;
-  }
+body {
+  margin: 0;
+  background-color: yellow;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
 
-  /* 改变跑马灯背景到蓝色 */
-  marquee {
-    display: block;
-    width: 100%;
-    font-size: 24px;
-    font-weight: bold;
-    color: red;
-    background-color: blue;
-    padding: 10px 0;
-  }
+/* 轮播图样式 */
+.carousel {
+  width: 100%;
+  max-width: 800px;
+  height: 228px;
+  margin: 20px auto;
+  overflow: hidden;
+  position: relative;
+}
+.slide-wrapper {
+  width: 400%;
+  height: 100%;
+  display: flex;
+  animation: slide 16s infinite;
+}
+.slide {
+  width: 25%;
+  flex-shrink: 0;
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+@keyframes slide {
+  0% {transform: translateX(0);}
+  20% {transform: translateX(0);}
+  25% {transform: translateX(-25%);}
+  45% {transform: translateX(-25%);}
+  50% {transform: translateX(-50%);}
+  70% {transform: translateX(-50%);}
+  75% {transform: translateX(-75%);}
+  95% {transform: translateX(-75%);}
+  100% {transform: translateX(0);}
+}
 
-  /* 轮播区域 */
-  .carousel {
-    width: 100%;
-    max-width: 800px;
-    height: 228px;
-    margin: 20px auto;
-    overflow: hidden;
-    position: relative;
-  }
+/* 按钮样式 */
+.buttons {
+  margin: 20px 0;
+}
+button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  color: white;
+}
+button:hover {
+  background-color: #45a049;
+}
 
-  /* 轮播动画容器 */
-  .slide-wrapper {
-    width: 400%;
-    height: 100%;
-    display: flex;
-    animation: slide 16s infinite;
-  }
-  .slide {
-    width: 25%;
-    flex-shrink: 0;
-    height: 100%;
-  }
-  .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-  @keyframes slide {
-    0% {transform: translateX(0);}
-    20% {transform: translateX(0);}
-    25% {transform: translateX(-25%);}
-    45% {transform: translateX(-25%);}
-    50% {transform: translateX(-50%);}
-    70% {transform: translateX(-50%);}
-    75% {transform: translateX(-75%);}
-    95% {transform: translateX(-75%);}
-    100% {transform: translateX(0);}
-  }
+/* 内容页隐藏显示 */
+.page {
+  display: none;
+  padding: 10px 0;
+}
+.page.active {
+  display: block;
+}
 
-  /* 按钮 */
-  .buttons {
-    margin: 20px 0;
-  }
-  .buttons button {
-    margin: 0 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
-    background-color: #4CAF50;
-    color: white;
-  }
-  .buttons button:hover {
-    background-color: #45a049;
-  }
+/* 定义每排5个图片，用 grid 布局，宽度按照百分比分配 */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  /*每列20%宽，五列正好满 100% */
+  gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  /* 内容页 */
-  .page {
-    display: none;
-    padding: 10px 0;
-  }
-  .page.active {
-    display: block;
-  }
-
-  /* 使用CSS Grid实现每排5个 */
+/* 图片在小屏幕上，确保每行5个，不变 也可以自适应 */
+@media(max-width: 900px){
   .grid-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 每行5个列 */
-    gap: 10px;  /* 图片之间的间距 */
-    max-width: 1200px;
-    margin: 0 auto;
+    grid-template-columns: repeat(5, 20%);
   }
+}
 
-  /* 手机等小屏幕上也每行5个，保持 */
-  @media(max-width: 850px){
-    .grid-container {
-      grid-template-columns: repeat(5, 1fr); /* 保持5列 */
-    }
-  }
-
-  /* 如果希望更小的屏幕显示少一点列，可以取消 media 查询，默认5列 */
-
-  /* 每个图片块 */
-  .grid-item {
-    background-color: #fff; /*底色，可选 */
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 4px rgba(0,0,0,0.1);
-  }
-  .grid-item a {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-  }
-  .grid-item img {
-    width: 100%; /* 自适应宽度 */
-    height: auto;
-    display: block;
-  }
-  span {
-    display: block;
-    padding: 8px;
-    font-size: 14px;
-    color: #333;
-  }
-
-  /* 底部说明 */
-  .footer {
-    margin: 20px 0;
-    font-size: 14px;
-    color: #333;
-  }
+/* 每个图片块样式 */
+.grid-item {
+  background: transparent; /* 透明背景 */
+}
+.grid-item a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+span {
+  display: block;
+  padding: 8px 0;
+  font-size: 14px;
+  color: #333;
+}
+.footer {
+  margin: 20px 0;
+  font-size: 14px;
+  color: #333;
+}
 </style>
 </head>
 <body>
-
-<!-- 顶部跑马灯 -->
-<marquee behavior="scroll" direction="left" scrollamount="10">
-  这是跑马灯标题
-</marquee>
 
 <!-- 轮播图 -->
 <div class="carousel">
@@ -157,19 +133,16 @@
   </div>
 </div>
 
-<!-- 按钮导航 -->
+<!-- 按钮切换 -->
 <div class="buttons">
-  <button onclick="showPage('single')">导航</button>
-  <button onclick="showPage('online')">博彩</button>
-  <button onclick="showPage('compet')">直播</button>
-  <button onclick="showPage('table')">游戏</button>
+  <button onclick="showPage('single')">单机</button>
+  <button onclick="showPage('online')">网游</button>
+  <button onclick="showPage('compet')">竞技</button>
 </div>
-<!-- 四个内容页，每页5*5=25个图片 -->
+<!-- 分类内容：每行5个图片 -->
 <div id="single" class="page active">
   <div class="grid-container">
-    <!-- 这里按需求填充图片，示范用占位图 -->
-    <!-- 第一排 -->
-    <div class="grid-item"><a href="https://555838jj.cc:61016/"><img src="https://e3f49eaa46b57.cdn.sohucs.com/2025/7/3/14/50/MTAwMTIyXzE3NTE1MjU0NDgyNDA=.gif" alt="单机1" /><span>澳门新葡京</span></a></div>
+  <div class="grid-item"><a href="https://555838jj.cc:61016/"><img src="https://e3f49eaa46b57.cdn.sohucs.com/2025/7/3/14/50/MTAwMTIyXzE3NTE1MjU0NDgyNDA=.gif" alt="单机1" /><span>澳门新葡京</span></a></div>
     <div class="grid-item"><a href="https://195-9-39-ozncx.cc/?cid=596553"><img src="https://e3f49eaa46b57.cdn.sohucs.com/2025/6/30/10/11/MTAwMTIyXzE3NTEyNDk0ODg1NDQ=.gif" alt="单机2" /><span>澳门新葡京</span></a></div>
     <div class="grid-item"><a href="https://77665vv.cc:57777/"><img src="https://e3f49eaa46b57.cdn.sohucs.com/2025/7/3/14/51/MTAwMTIyXzE3NTE1MjU0ODk3NDU=.gif" alt="单机3" /><span>威尼斯</span></a></div>
     <div class="grid-item"><a href="https://802-5-xz-waferj.cc/?cid=435166"><img src="https://e3f49eaa46b57.cdn.sohucs.com/2025/7/4/17/7/MTAwMTIyXzE3NTE2MjAwMjYzOTU=.gif" alt="单机4" /><span>澳门威尼斯</span></a></div>
@@ -186,9 +159,9 @@
   </div>
 </div>
 
+<!-- 网游分类 -->
 <div id="online" class="page">
   <div class="grid-container">
-    <!-- 这里填充网游图片 -->
     <div class="grid-item"><a href="#"><img src="https://via.placeholder.com/200x200?text=网游1" alt="网游1" /><span>网游1</span></a></div>
     <div class="grid-item"><a href="#"><img src="https://via.placeholder.com/200x200?text=网游2" alt="网游2" /><span>网游2</span></a></div>
     <div class="grid-item"><a href="#"><img src="https://via.placeholder.com/200x200?text=网游3" alt="网游3" /><span>网游3</span></a></div>
@@ -197,28 +170,15 @@
     <!-- 继续补充 -->
   </div>
 </div>
-
+<!-- 竞技分类 -->
 <div id="compet" class="page">
   <div class="grid-container">
-    <!-- 竞技内容 -->
     <div class="grid-item"><a href="#"><img src="https://via.placeholder.com/200x200?text=竞1" alt="竞1" /><span>竞技1</span></a></div>
     <div class="grid-item"><a href="#"><img src="https://via.placeholder.com/200x200?text=竞2" alt="竞2" /><span>竞技2</span></a></div>
     <div class="grid-item"><a href="#"><img src="https://via.placeholder.com/200x200?text=竞3" alt="竞3" /><span>竞技3</span></a></div>
     <div class="grid-item"><a href="#"><img src="https://via.placeholder.com/200x200?text=竞4" alt="竞4" /><span>竞技4</span></a></div>
     <div class="grid-item"><a href="#"><img src="https://via.placeholder.com/200x200?text=竞5" alt="竞5" /><span>竞技5</span></a></div>
     <!-- 继续补充至25个 -->
-  </div>
-</div>
-
-<div id="table" class="page">
-  <div class="grid-container">
-    <!-- 桌游内容 -->
-    <div class="grid-item"><a href="#"><img src="https://via.placeholder.com/200x200?text=桌1" alt="桌1" /><span>桌游1</span></a></div>
-    <div class="grid-item"><a href="#"><img src="https://via.placeholder.com/200x200?text=桌2" alt="桌2" /><span>桌游2</span></a></div>
-    <div class="grid-item"><a href="#"><img src="https://via.placeholder.com/200x200?text=桌3" alt="桌3" /><span>桌游3</span></a></div>
-    <div class="grid-item"><a href="#"><img src="https://via.placeholder.com/200x200?text=桌4" alt="桌4" /><span>桌游4</span></a></div>
-    <div class="grid-item"><a href="#"><img src="https://via.placeholder.com/200x200?text=桌5" alt="桌5" /><span>桌游5</span></a></div>
-    <!-- 继续补充 -->
   </div>
 </div>
 
