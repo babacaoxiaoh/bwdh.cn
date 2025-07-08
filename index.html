@@ -76,7 +76,7 @@ button:hover {
   display: block;
 }
 
-/* 关键：定义每排5个图片宽度百分比，刚好填满屏幕宽 */
+/* 每行5个图片，宽20% */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(5, 20%);
@@ -86,30 +86,24 @@ button:hover {
   margin: 0 auto;
 }
 
-/* 图片块样式 */
-.grid-item {
-  background: transparent;
-}
-.grid-item a {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-}
+/* 让图片自适应容器，保持比例 */
 .grid-item img {
   width: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
-  object-fit: contain; /* 保持比例，不会变形 */
+  object-fit: contain;
   border-radius: 4px;
 }
-span {
+
+.span {
   display: block;
   padding: 8px 0;
   font-size: 14px;
   color: #333;
 }
 
-/* 只在屏幕较小时调整，保持5列 */
+/* 手机小屏幕上确保排成5列 */
 @media(max-width: 900px){
   .grid-container {
     grid-template-columns: repeat(5, 20%);
