@@ -67,7 +67,7 @@ button:hover {
   background-color: #45a049;
 }
 
-/* 内容页隐藏显示 */
+/* 内容页，隐藏和显示 */
 .page {
   display: none;
   padding: 10px 0;
@@ -76,26 +76,19 @@ button:hover {
   display: block;
 }
 
-/* 定义每排5个图片，用 grid 布局，宽度按照百分比分配 */
+/* 关键：定义每排5个图片宽度百分比，刚好填满屏幕宽 */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(5, 20%);
-  /*每列20%宽，五列正好满 100% */
   gap: 10px;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* 图片在小屏幕上，确保每行5个，不变 也可以自适应 */
-@media(max-width: 900px){
-  .grid-container {
-    grid-template-columns: repeat(5, 20%);
-  }
-}
-
-/* 每个图片块样式 */
+/* 图片块样式 */
 .grid-item {
-  background: transparent; /* 透明背景 */
+  background: transparent;
 }
 .grid-item a {
   display: block;
@@ -106,6 +99,7 @@ button:hover {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: contain; /* 保持比例，不会变形 */
   border-radius: 4px;
 }
 span {
@@ -114,6 +108,14 @@ span {
   font-size: 14px;
   color: #333;
 }
+
+/* 只在屏幕较小时调整，保持5列 */
+@media(max-width: 900px){
+  .grid-container {
+    grid-template-columns: repeat(5, 20%);
+  }
+}
+
 .footer {
   margin: 20px 0;
   font-size: 14px;
