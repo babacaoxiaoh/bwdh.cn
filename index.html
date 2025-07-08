@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>百万盒子站</title>
+<title>下载站示例</title>
 <style>
   body {
     margin: 0;
@@ -19,7 +19,7 @@
     font-size: 24px;
     font-weight: bold;
     color: red;
-    background-color: blue; /* 改成蓝色 */
+    background-color: blue;
     padding: 10px 0;
   }
 
@@ -63,7 +63,7 @@
     100% {transform: translateX(0);}
   }
 
-  /* 按钮区域 */
+  /* 按钮 */
   .buttons {
     margin: 20px 0;
   }
@@ -81,30 +81,39 @@
     background-color: #45a049;
   }
 
-  /* 内容页区 */
+  /* 内容页 */
   .page {
-    display: none; /* 默认隐藏 */
-    flex-wrap: wrap;
-    justify-content: center;
+    display: none;
+    padding: 10px 0;
+  }
+  .page.active {
+    display: block;
+  }
+
+  /* 使用CSS Grid实现每排5个 */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 每行5个列 */
+    gap: 10px;  /* 图片之间的间距 */
     max-width: 1200px;
     margin: 0 auto;
   }
-  .page.active {
-    display: flex;
+
+  /* 手机等小屏幕上也每行5个，保持 */
+  @media(max-width: 850px){
+    .grid-container {
+      grid-template-columns: repeat(5, 1fr); /* 保持5列 */
+    }
   }
 
-  /* 图片块，用Flex布局排成最多五列 */
-  .grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-  }
+  /* 如果希望更小的屏幕显示少一点列，可以取消 media 查询，默认5列 */
+
+  /* 每个图片块 */
   .grid-item {
-    flex: 1 1 18%; /* 允许伸缩，基础宽度18% */
-    max-width: 18%; /* 限制最大宽度，最多五个一排 */
-    margin: 1%;
-    box-sizing: border-box;
+    background-color: #fff; /*底色，可选 */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 4px rgba(0,0,0,0.1);
   }
   .grid-item a {
     display: block;
@@ -112,33 +121,15 @@
     color: inherit;
   }
   .grid-item img {
-    width: 100%;
+    width: 100%; /* 自适应宽度 */
     height: auto;
-    border-radius: 8px;
-  }
-  .grid-item span {
     display: block;
-    margin-top: 8px;
+  }
+  span {
+    display: block;
+    padding: 8px;
     font-size: 14px;
     color: #333;
-  }
-
-  /* 响应式调整*/
-  @media(max-width: 850px){
-    .grid-item {
-      flex: 1 1 22%; /* 小屏幕两列或更多 */
-      max-width: 22%;
-    }
-  }
-  @media(max-width: 600px){
-    .grid-item {
-      flex: 1 1 45%; /* 更小屏幕两列或三列 */
-      max-width: 45%;
-    }
-    .buttons button {
-      padding: 8px 16px;
-      font-size: 14px;
-    }
   }
 
   /* 底部说明 */
