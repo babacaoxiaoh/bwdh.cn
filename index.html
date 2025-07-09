@@ -128,6 +128,45 @@ span {
   </div>
 </div>
 
+  <!--<script src="/main/template/m1938pc/pic/dl"></script>-->
+
+<script>
+// &#24191;&#21578;&#23610;&#23544;500x100
+var sUserAgent = navigator.userAgent;
+var style='';
+style +='<style>';
+style +='.dpClass{position: fixed; left: 0px; right: 0px; z-index: 999;margin: 0 auto;}';
+var phoneHeight = 100;
+var pcHeight = 0;
+
+// phone
+if (sUserAgent.indexOf('Android') > -1 || sUserAgent.indexOf('iPhone') > -1 || sUserAgent.indexOf('iPad') > -1 || sUserAgent.indexOf('iPod') > -1 || sUserAgent.indexOf('Windows Phone') > -1) {
+	style +='.dpClass{width: 100%;}';
+	style +='.dpClass img,.dpClass a{width:100%;height:' + phoneHeight + 'px;}';
+	style +='body {padding-top:' + phoneHeight + 'px;padding-bottom:'+ phoneHeight +'px}';
+} else { // pc
+	style +='.dpClass{width: 500px;}';
+	style +='.dpClass img,.dpClass a{width:100%;height:' + pcHeight + 'px;}';
+	style +='body {padding-top:' + pcHeight + 'px;padding-bottom:'+ pcHeight +'px}';
+}
+style +='</style>';
+document.write(style);
+</script>
+
+
+<!--&#39030;&#39128; &#37096;&#38271; P85&#26032;&#33889;&#20140;-->
+<div class="dpClass" style="top: 0px;">
+<a href="https://154.19.217.114:7017/?a=411126" data-type="link"target="_blank">
+	<img data-type="img" src="https://www.nufox.top/images/35/ASB-960X100-zhibo.gif">
+</a>
+</div>
+
+<!--&#24213;&#39128; &#38065;&#22810;&#22810; &#37096;&#38271;-->
+<div  class='dpClass' style="bottom: 0px;">
+<a href="https://5462222kk.vip/')" data-type="link">
+	<img data-type="img" src="https://777eee666eee.com/ece9094f6e774923a8dc2da2e838f53b.gif">
+</a>
+</div>
 <!-- 按钮切换 -->
 <div class="buttons">
   <button onclick="showPage('single')">热门应用</button>
